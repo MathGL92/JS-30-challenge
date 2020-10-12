@@ -28,7 +28,7 @@ body {
 }
 
 /* This css is only applied when fullscreen is active. */
-.player:fullscreen {
+.fullscreen {
   max-width: none;
   width: 100%;
 }
@@ -159,4 +159,8 @@ input[type=range]::-moz-range-thumb {
   border-radius: 50px;
   background: #ffc600;
   cursor: pointer;
+}
+
+.size-video {
+  flex: 0;
 }
