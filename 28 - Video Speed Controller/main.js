@@ -1,0 +1,23 @@
+const speed = document.querySelector('.speed');
+const bar = speed.querySelector('.speed-bar');
+const video = document.querySelector('.flex');
+
+function handleMove(event) {
+  const y = event.pageY - this.offsetTop;
+  const percent = y / this.offsetHeight;
+  const min = 0.4;
+  const max = 4;
+
+  // change height of speed bar
+  const height = Math.round(percent * 100) + '%';
+  bar.style.height = height;
+
+  // change text of playbackRate
+  const playbackRate = percent * (max - min) + min;
+  bar.textContent = `${playbackRate.toFixed(2)}x`;
+
+  // change playbackRate of video
+  video.playbackRate = playbackRate;
+}
+
+speed.addEventListener('mousemove', handleMove);
